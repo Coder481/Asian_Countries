@@ -4,3 +4,10 @@
 ### Features
 * Uses RESTapi to get data of all the Asian countries.
 * Store data offline in Room Database.
+
+### Components
+* Retrofit
+* OkHttp
+* Gson
+* Glide
+* Room Persistence Library
