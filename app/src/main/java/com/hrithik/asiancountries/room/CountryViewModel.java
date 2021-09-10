@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.hrithik.asiancountries.models.Country;
+import com.hrithik.asiancountries.models.RoomCountry;
 
 import java.util.List;
 
@@ -19,11 +20,11 @@ public class CountryViewModel extends AndroidViewModel {
         mRepository = new CountryRepository(application);
     }
 
-    public LiveData<List<Country>> getAllCountries() {
+    public LiveData<List<RoomCountry>> getAllCountries() {
         return mRepository.getAllCountries();
     }
 
-    public void insertAll(List<Country> countries) {
+    public void insertAll(List<RoomCountry> countries) {
         mRepository.insertAll(countries);
     }
 

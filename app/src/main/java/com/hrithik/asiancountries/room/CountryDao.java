@@ -7,19 +7,20 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.hrithik.asiancountries.models.Country;
+import com.hrithik.asiancountries.models.RoomCountry;
 
 import java.util.List;
 
 @Dao
 public abstract class CountryDao {
 
-    @Query("SELECT * FROM Country")
-    abstract LiveData<List<Country>> loadAllCountries();
+    @Query("SELECT * FROM RoomCountry")
+    abstract LiveData<List<RoomCountry>> loadAllCountries();
 
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    abstract void insertAll(List<Country> countries);
+    abstract void insertAll(List<RoomCountry> countries);
 
-    @Query("DELETE FROM Country")
+    @Query("DELETE FROM RoomCountry")
     abstract void deleteAll();
 }

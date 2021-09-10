@@ -6,38 +6,63 @@ import androidx.room.TypeConverter;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.hrithik.asiancountries.models.Country;
+import com.hrithik.asiancountries.models.Language;
 
 import java.lang.reflect.Type;
 import java.util.List;
 
-@ProvidedTypeConverter
+
 public class DataConverter {
 
 
-    @TypeConverter
-    public String fromCountryToJson(List<Country> countries){
-        if (countries == null)
+
+    public static String fromLanguageListToJson(List<Language> languages){
+        if (languages == null)
             return null;
 
         Gson gson = new Gson();
-        Type type = new TypeToken<List<Country>>(){}.getType();
+        Type type = new TypeToken<List<Language>>(){}.getType();
 
 
-        String json = gson.toJson(countries, type);
+        String json = gson.toJson(languages, type);
         return json;
 
     }
 
-    @TypeConverter
-    public List<Country> fromJsonToList(String jsonString){
+
+    public static List<Language> fromJsonToLanguageList(String jsonString){
         if (jsonString == null)
             return null;
 
         Gson gson = new Gson();
-        Type type = new TypeToken<List<Country>>(){}.getType();
+        Type type = new TypeToken<List<Language>>(){}.getType();
 
-        List<Country> countries = gson.fromJson(jsonString, type);
-        return countries;
+        return gson.fromJson(jsonString, type);
+    }
+
+
+
+    public static String fromBorderListToJson(List<String> borders){
+        if (borders == null)
+            return null;
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>(){}.getType();
+
+
+        return gson.toJson(borders, type);
+
+    }
+
+
+    public static List<String> fromJsonToBordersList(String jsonString){
+        if (jsonString == null)
+            return null;
+
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<String>>(){}.getType();
+
+        return gson.fromJson(jsonString, type);
     }
 
 }
