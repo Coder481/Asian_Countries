@@ -1,13 +1,5 @@
 package com.hrithik.asiancountries.models;
 
-import androidx.room.ColumnInfo;
-import androidx.room.Entity;
-import androidx.room.TypeConverters;
-
-import com.hrithik.asiancountries.DataConverter;
-
-import org.jetbrains.annotations.NotNull;
-
 import java.util.List;
 
 

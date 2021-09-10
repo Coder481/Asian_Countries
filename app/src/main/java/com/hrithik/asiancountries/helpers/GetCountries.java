@@ -1,4 +1,4 @@
-package com.hrithik.asiancountries;
+package com.hrithik.asiancountries.helpers;
 
 import com.hrithik.asiancountries.models.Country;
 
