@@ -116,6 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
                         setUpViews();
 
+                        getFromAPI = false;
+
                         countryViewModel.insertAll(roomCountryList);
                     }
 
